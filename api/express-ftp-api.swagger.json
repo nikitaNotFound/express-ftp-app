@@ -1,0 +1,25 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Express-ftp-app API",
+    "version": "1.0.0",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/authenticate": {
+      "put": {
+        "tags": [
+          "Authentication"
+        ],
+        "description": "Authenticate using google",
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  }
+}
