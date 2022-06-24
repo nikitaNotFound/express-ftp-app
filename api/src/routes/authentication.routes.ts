@@ -1,13 +1,20 @@
-import express, { Router } from "express";
+import express from "express";
 import * as authenticationController from '../controllers/authentication.controller';
 
 const router = express.Router();
 
 router.put(
-  '/authenticate',
+  '/authentication/authenticate',
   // #swagger.tags = ['Authentication']
   // #swagger.description = 'Authenticate using google'
   authenticationController.authenticate
 );
 
-export default Router;
+router.delete(
+  '/authentication/logout',
+  // #swagger.tags = ['Authentication']
+  // #swagger.description = 'Logout'
+  authenticationController.logout
+);
+
+export default router;

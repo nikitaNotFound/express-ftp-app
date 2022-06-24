@@ -11,13 +11,122 @@
     "http"
   ],
   "paths": {
-    "/authenticate": {
+    "/authentication/authenticate": {
       "put": {
         "tags": [
           "Authentication"
         ],
         "description": "Authenticate using google",
         "parameters": [],
+        "responses": {}
+      }
+    },
+    "/authentication/logout": {
+      "delete": {
+        "tags": [
+          "Authentication"
+        ],
+        "description": "Logout",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/folders": {
+      "post": {
+        "tags": [
+          "Folders"
+        ],
+        "description": "['Create folder']",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/folders/{folderId}": {
+      "delete": {
+        "tags": [
+          "Folders"
+        ],
+        "description": "['Delete folder']",
+        "parameters": [
+          {
+            "name": "folderId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "get": {
+        "tags": [
+          "Folders"
+        ],
+        "description": "['Get folder content']",
+        "parameters": [
+          {
+            "name": "folderId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/files": {
+      "post": {
+        "tags": [
+          "Files"
+        ],
+        "description": "Upload file",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/files/{fileId}": {
+      "delete": {
+        "tags": [
+          "Files"
+        ],
+        "description": "Delete file",
+        "parameters": [
+          {
+            "name": "fileId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "patch": {
+        "tags": [
+          "Files"
+        ],
+        "description": "Rename file",
+        "parameters": [
+          {
+            "name": "fileId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "description": "Download file",
+        "parameters": [
+          {
+            "name": "fileId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {}
       }
     }
