@@ -1,9 +1,13 @@
 import express from "express";
+import path from "path";
 import swaggerUi from "swagger-ui-express";
 
 import rootRouter from "./routes/root.routes";
+import { StoreManager } from "./store-manager/store-manager";
 
 const app = express();
+
+StoreManager.init({ rootFolderPath: path.join(__dirname, '/store') });
 
 app.use('/', rootRouter);
 
