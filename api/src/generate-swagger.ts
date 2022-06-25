@@ -3,6 +3,13 @@ import swaggerAutogen from "swagger-autogen";
 const swaggerDoc = {
   info: {
     title: 'Express-ftp-app API'
+  },
+  securityDefinitions: {
+    bearerAuth: {
+      type: 'http',
+      scheme: 'bearer',
+      bearerFormat: 'JWT'
+    }
   }
 };
 
@@ -13,4 +20,4 @@ const endpointFiles = [
   './dist/routes/files.routes.js'
 ];
 
-swaggerAutogen()(swaggerOutputFile, endpointFiles, swaggerDoc);
+swaggerAutogen({openapi: '3.0.0'})(swaggerOutputFile, endpointFiles, swaggerDoc);

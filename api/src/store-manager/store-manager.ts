@@ -13,7 +13,7 @@ export class StoreManager {
     }
   }
 
-  static uploadFile() {
+  static uploadFile(fileId: string, fileExtension: string, data: Buffer) {
     return;
   }
 

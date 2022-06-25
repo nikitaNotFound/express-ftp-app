@@ -5,15 +5,22 @@ const router = express.Router();
 
 router.put(
   '/authentication/authenticate',
-  // #swagger.tags = ['Authentication']
-  // #swagger.description = 'Authenticate using google'
+  /*
+    #swagger.tags = ['Authentication']
+    #swagger.description = 'Authenticate using google'
+  */
   authenticationController.authenticate
 );
 
 router.delete(
   '/authentication/logout',
-  // #swagger.tags = ['Authentication']
-  // #swagger.description = 'Logout'
+  /*
+    #swagger.tags = ['Authentication']
+    #swagger.description = 'Logout'
+    #swagger.security = [{
+      "bearerAuth": []
+    }]
+  */
   authenticationController.logout
 );
 
